@@ -24,7 +24,7 @@ spec:
         - name: AUTH_SERVICEACCOUNT
           value: '/etc/sa/service-account-creds.json'
 
-        image: gcr.io/{PROJECT_ID}/ms-files:{TEMPLATE_VERSION}
+        image: gcr.io/{PROJECT_ID}/ms-file:{TEMPLATE_VERSION}
         imagePullPolicy: Always
         
         name: ms-files
