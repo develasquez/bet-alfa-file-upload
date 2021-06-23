@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-files-service
+spec:
+  selector:
+    app:  ms-files
+  ports:
+    - name: rest
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
