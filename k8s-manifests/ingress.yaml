@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: 	ingress-ip
+    kubernetes.io/ingress.global-static-ip-name: ingress-ip
     networking.gke.io/managed-certificates: betalfa-cert
     kubernetes.io/ingress.class: "gce"
 spec:
@@ -11,7 +11,9 @@ spec:
   - http:
       paths:
       - path: /upload
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
-          serviceName: ms-files-service
-          servicePort: 8080
+          service:
+            name: ms-files-service
+            port:
+              number: 8080

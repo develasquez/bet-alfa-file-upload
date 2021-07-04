@@ -101,6 +101,13 @@ const upload = async (req, res) => {
   }
 };
 
+const health = async (req, res) => {
+  res.status(200).send({
+    message: "OK"
+  });
+}
+
 module.exports = {
   upload,
+  health
 };
