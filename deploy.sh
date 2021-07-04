@@ -11,4 +11,5 @@ cat deployment_version.yaml;
 gcloud container clusters get-credentials bet-alfa-cluster --region us-central1 --project $PROJECT_ID
 kubectl apply -f deployment_version.yaml;
 kubectl apply -f k8s-manifests/service.yaml;
+kubectl apply -f k8s-manifests/ingress.yaml;
 
